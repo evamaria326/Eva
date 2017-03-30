@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.3.2)  30 MAR 2017 12:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.3.2)  30 MAR 2017 12:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1919,28 +1919,36 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (./assignment-coverpage-CI.tex [0
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./task1_1.tex) (./task1_
+2.tex) (./task1_3.tex) (./task2_1.tex)
+(./task2_2.tex) (./task2_3.tex)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 101.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 101.
+ (./root.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 101.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 101.
+Package rerunfilecheck Info: File `root.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package logreq Info: Writing requests to 'root.run.xml'.
+\openout1 = `root.run.xml'.
 
-! LaTeX Error: File `task1_1.tex' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: tex)
-
-Enter file name: 
-! Emergency stop.
-<read *> 
-         
-l.81 \input{task1_1.tex}
-                        ^^M
-*** (cannot \read from terminal in nonstop modes)
-
- 
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 101.
+ ) 
 Here is how much of TeX's memory you used:
- 43555 strings out of 493013
- 991383 string characters out of 6135683
+ 43571 strings out of 493013
+ 991317 string characters out of 6135683
  1264484 words of memory out of 5000000
- 46526 multiletter control sequences out of 15000+600000
+ 46521 multiletter control sequences out of 15000+600000
  34945 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,8n,96p,10355b,727s stack positions out of 5000i,500n,10000p,200000b,80000s
-!  ==> Fatal error occurred, no output PDF file produced!
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/times/utmr8a.pfb>
+Output written on root.pdf (1 page, 22595 bytes).
+PDF statistics:
+ 25 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
+ 2 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+
