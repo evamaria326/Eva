@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper, 10 pt, conference]{ieeeconf}
+
+\IEEEoverridecommandlockouts          % This command is only needed if 
+                                      % you want to use the \thanks command
+
+\overrideIEEEmargins                  % Needed to meet printer requirements.
+
+\usepackage[utf8]{inputenc}
+% \usepackage[ngerman]{babel}           % Uncomment this if you want to write your article in German
+\usepackage{tabularx}
+
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+% The following packages can be found on http:\\www.ctan.org
+\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb} % assumes amssymb package installed
+\usepackage{bm} % bold math symbols; use only for lower case greek letters; NOT NEEDED in general
+\usepackage{trfsigns} % for Laplace transform symbol; NOT NEEDED in general
+
+\usepackage{hyperref} % Verlinkung von Referenzen
+
+
+
+% Comment out the following if you do not need to use TikZ
+\usepackage{tikz} % for graphics written as text; NOT NEEDED in general
+\usepackage{pgf} % for graphics written as text; NOT NEEDED in general
+\usetikzlibrary{positioning} % for positioning nodes in TikZ; NOT NEEDED in general
+\usepackage{pgfplots} % for plots described by text reading data from a data file; NOT NEEDED in general
+\usetikzlibrary{pgfplots.groupplots} % for plots described by text reading data from a data file; NOT NEEDED in general
+\tikzset{>=latex}
+\tikzstyle{sysblock}=[draw, fill=white, text centered]
+\tikzstyle{sum}=[draw,circle,inner sep=0mm,minimum size=2.5mm]
+\tikzstyle{branch}=[draw,circle,inner sep=0mm, minimum size=1mm,fill=black,draw=black]
+% For diagrams generated with Inkscape
+\graphicspath{{images/diagrams/}}
+\def\plotdatadir{images/plots/data/} % For plots using the pgfplot package, see images/plots/tex/sinus.tex
+\pgfplotsset{compat=1.10}
+
+
+%doc% \item[\texttt{\href{http://ctan.org/tex-archive/macros/latex/contrib/units}{%%
+%doc% units%%
+%doc% }}] 
+%doc% For setting correctly typesetted units and nice fractions with \verb+\unit[42]{m}+ and \verb+\unitfrac[100]{km}{h}+.
+% \usepackage{units}
+\usepackage{textcomp} % see http://tex.stackexchange.com/questions/74670/microtype-siunitx-and-micro-mysterious-warnings
+\usepackage[output-decimal-marker={.}]{siunitx} % This is an english paper, so use a dot as a decimal marker (default).
+
+\usepackage{booktabs} % for better looking tables using \toprule \midrule and \bottomrule etc.
+
+\usepackage{subcaption} % replaces the deprecated subfigure environment
+\captionsetup{subrefformat=parens} % with \subref, you will get (a) instead of a
+
+
+% TODO: Change this to your title
+\title{\LARGE \bf
+Preparation of Papers for VWA (443.513)
+}
+
+% TODO: Change the authors and the affiliation accordingly
+\author{John Doe$^{1}$% <-this % stops a space
+\thanks{$^{1}$John Doe is with the Institute of Examples and Template Documents, Graz University of Technology, 8010 Graz, Austria
+        {\tt\small alice.adams@example.com}}%
+% \thanks{$^{2}$Bernard D. Researcheris with the Department of Electrical Engineering, Wright State University,
+%         Dayton, OH 45435, USA
+%         {\tt\small b.d.researcher@ieee.org}}%
+}
+
+% Bibliography settings. 
+% TODO: Edit references.bib
+\usepackage[style=numeric,backend=bibtex]{biblatex}
+\addbibresource{references.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+\input{assignment-coverpage-CI.tex}
+
+% \section{CONCLUSIONS}
+% 
+% This paper has shown some ways to use \LaTeX~to generate high-class scientific articles worthy of publication.
+
+\addtolength{\textheight}{-12cm}   % This command serves to balance the column lengths
+                                   % on the last page of the document manually. It shortens
+                                   % the textheight of the last page by a suitable amount.
+                                   % This command does not take effect until the next page
+                                   % so it should come on the page before the last. Make
+                                   % sure that you do not shorten the textheight too much.
+
+\end{document}

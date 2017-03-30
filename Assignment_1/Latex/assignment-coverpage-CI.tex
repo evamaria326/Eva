@@ -1,0 +1,41 @@
+%%%%%%%%% begin snippet
+%% You need to add the package "tabularx".
+%% Place the snippet right after \begin{document}
+
+% need tabularx
+
+\begin{titlepage}
+       \begin{center}
+             \begin{huge}
+				   %% Update assignment number here
+                   \textbf{Assignment 1}
+             \end{huge}
+       \end{center}
+
+       \begin{center}
+             \begin{large}
+                   Computational Intelligence, SS2017
+             \end{large}
+       \end{center}
+
+       \begin{center}
+ \begin{tabularx}{\textwidth}{|>{\hsize=.33\hsize}X|>{\hsize=.33\hsize}X|>{\hsize=.33\hsize}X|} 
+
+                   \hline
+                   \multicolumn{3}{|c|}{\textbf{Team Members}} \\
+                   \hline
+                   Last name & First name & Matriculation Number \\
+                   \hline
+                    &  &  \\
+                   \hline
+                   Kopf & Christian & 1331187 \\
+                   \hline
+                   -- & -- & -- \\
+                   \hline
+
+             \end{tabularx}
+       \end{center}
+
+\end{titlepage}
+
+%%%%%%%%% end snippet
