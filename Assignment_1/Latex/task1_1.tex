@@ -1,0 +1,49 @@
+\subsection{1.1 Derivation of Regularized Linear Regression}
+\label{subsec:task_1_1}
+
+The task is to show that
+\begin{equation}\label{eq:parameters_target}
+ \bm\theta^* = (\bm X^T\bm X+\lambda \bm I)^{-1}\bm X^T\bm y
+\end{equation}
+is the analytical solution for the optimal parameters to minimize the linear regression cost of the regularized cost function
+\begin{equation}
+ J(\bm\theta) = \frac{1}{m}||\bm X\bm\theta-\bm y||^2 + \frac{\lambda}{m}||\bm\theta||^2~~.
+\end{equation}
+The minimum of the cost function can be determined by setting the gradient of the cost function to 0.
+\begin{equation}\label{eq:derived_initial_condition}
+ \frac{\partial J(\bm\theta)}{\partial\bm\theta} = \bm 0^T
+\end{equation}
+With this in mind we calculate the derivative of the regularized cost function.
+\begin{equation}
+ \frac{\partial J(\bm\theta)}{\partial\bm\theta} = \frac{2}{m}(\bm X\bm\theta-\bm y)^T\frac{\partial(\bm X\bm\theta-\bm y)}{\partial\bm\theta}+\frac{2\lambda}{m}\bm\theta^T
+\end{equation}
+This leaves us with a solution including the inner derivation which can again be solved to get
+\begin{equation}\label{eq:derived_final}
+ \frac{\partial J(\bm\theta)}{\partial\bm\theta} = \frac{2}{m}(\bm X\bm\theta-\bm y)^T\bm X+\frac{2\lambda}{m}\bm\theta^T~~.
+\end{equation}
+From \eqref{eq:derived_final} and the auxilary condition \eqref{eq:derived_initial_condition} we can set 
+\begin{equation}
+ \frac{2}{m}(\bm X\bm\theta-\bm y)^T\bm X+\frac{2\lambda}{m}\bm\theta^T=\bm 0^T~~.
+\end{equation}
+We also may neglect the factor $2m^{-1}$ since it drops out when multiplied by 0.
+\begin{equation}
+(\bm X\bm\theta-\bm y)^T\bm X+\lambda\bm\theta^T=\bm 0^T
+\end{equation}
+By transposing we get
+\begin{equation}
+\bm X^T(\bm X\bm\theta-\bm y)+\lambda\bm\theta=\bm 0~~.
+\end{equation}
+Further resolving leads to
+\begin{equation}
+\bm X^T\bm X\bm\theta-\bm X^T\bm y+\lambda\bm\theta=\bm 0
+\end{equation}
+\begin{equation}
+\bm X^T\bm X\bm\theta+\lambda\bm\theta=\bm X^T\bm y
+\end{equation}
+\begin{equation}
+(\bm X^T\bm X+\lambda\bm I)\bm\theta=\bm X^T\bm y
+\end{equation}
+\begin{equation}
+\bm\theta=(\bm X^T\bm X+\lambda\bm I)^{-1}\bm X^T\bm y=\bm\theta^*
+\end{equation}
+which corresponds to \eqref{eq:parameters_target}. The optimal parameters $\bm\theta^*$ only exist if the inverse of $\bm X^T\bm X+\lambda\bm$ exists.
