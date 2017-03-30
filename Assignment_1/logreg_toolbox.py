@@ -90,7 +90,7 @@ def plot_logreg(data, degree, theta, E_list):
         y = data['y_' + st]
 
         XX = poly_2D_design_matrix(x1, x2, degree)
-        J = logreg.cost(theta, XX, y)
+        J = np.asscalar(logreg.cost(theta, XX, y))
 
         ax[k].pcolor(xx1, xx2, hh, cmap='cool')
 

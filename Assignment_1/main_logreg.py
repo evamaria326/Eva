@@ -55,8 +55,8 @@ def main():
     #### VARIANT 3: Optimize with gradient descent
     # res = minimize(f, x0=theta0, jac=df, options={'disp': True})
     # theta_opt = res.x.reshape((n, 1))
+    # E_list = []
 
-    E_list = []
     logreg_toolbox.plot_logreg(data, degree, theta_opt, E_list)
     plt.show()
 

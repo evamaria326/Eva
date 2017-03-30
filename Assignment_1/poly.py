@@ -25,25 +25,31 @@ def design_matrix(x, degree):
     The design matrix is built of all polynomials of x from degree 0 to 'degree' minus one.
 
     EX: for the data x = [0,1,2] and degree 2
-    the function should return: [[1,1,1],[0,1,2],[0,1,4]]
+    the function should return: [[1, 0, 0],
+								 [1, 1, 1],
+								 [1, 2, 4]] 
 
     :param x: numpy array of shape (N,1)
     :param degree: Higher degree of the polynomial
-    :return: Expanded data in a numpy array of shape (N,degree)
+    :return: Expanded data in a numpy array of shape (N,degree+1)
     """
 
     ######################
     #
     # TODO
     #
-    # Return the numpy array of shape (N,degree)
+    # Return the numpy array of shape (N,degree+1)
     # Storing the data of the form x_i^j at row i and column j
     # Look at the function description for more info
     #
     # TIP: use the power function from numpy
 
-    X = x  # TODO: change me
-
+    X = np.ones([len(x)])
+    for k in range(1,degree + 1):
+        if k == 1:
+            X = np.append(X[...,None], np.power(x, k), 1)
+        else:
+            X = np.append(X, np.power(x, k), 1)
     #
     # END TODO
     ######################
@@ -78,7 +84,9 @@ def train(x, y, degree):
     #   pinv is accessible in the sub-library numpy.linalg
     #
 
-    theta_opt = np.zeros(degree + 1)  # TODO: Change me
+    X = design_matrix(x, degree)
+    pseudoInv = np.linalg.pinv(X)
+    theta_opt = np.dot(pseudoInv, y)
 
     # END TODO
     ######################
@@ -105,7 +113,6 @@ def compute_error(theta, degree, x, y):
     # Returns the analytical solution of the linear regression
     #
     # TIPs:
-    #  - Don't forget to first expand the data
     #  - WARNING:   With numpy array * is a term-term matrix multiplication
     #               The function np.dot performs a matrix multiplication
     #               A longer alternative is to first change your array to the matrix class using np.matrix,

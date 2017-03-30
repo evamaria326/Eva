@@ -55,7 +55,9 @@ def design_matrix(x, centers, sigma):
 
 
     E.g: for the data x = [0,1,2], the centers [0,1] and sigma = 1/sqrt(2)
-    the function should return: [[1,1,1],[exp(0),exp(-1),exp(-2)],[exp(-1),exp(0),exp(-1)]]
+    the function should return: [[1, exp(0), exp(-1)],
+								 [1, exp(-1), exp(0)],
+								 [1, exp(-4), exp(-1)]] 
 
     :param x: numpy array of shape (N,1)
     :param centers: List of centers
