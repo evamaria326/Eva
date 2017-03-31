@@ -120,8 +120,9 @@ def compute_error(theta, degree, x, y):
     #
     #  - One can use the numpy function mean
 
-    err = -1  # TODO: Change me
-
+    X = design_matrix(x, degree)
+    disc = np.dot(X,theta) - y
+    err = np.power(np.linalg.norm(disc), 2)/len(X)
     #
     # END TODO
     ######################
