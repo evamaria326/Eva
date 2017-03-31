@@ -1,0 +1,54 @@
+\subsection{2.1 Derivation of Gradient}
+\label{subsec:task_2_1}
+
+The task is to show the gradient of the cost function
+\begin{equation}\label{eq:parameters_gradient}
+\frac{\partial J(\bm\theta)}{\partial \theta_{j}} = \frac{1}{m}\sum_{i=1}^{m} (h_{\bm\theta}(\bm x^{(i)}) - y^{(i)}) * x_{j}^{(i)}
+\end{equation}
+The logistic regression cost function can be written as
+\begin{equation}
+\label{eq:logi_res_cost_function}
+J(\bm\theta) = - \frac{1}{m}\sum_{i=1}^{m} (y^{(i)} log(h_{\bm\theta}(\bm x^{(i)})) + (1 - y^{(i)}) \, log(1 - h_{\bm\theta}(\bm x^{(i)})))
+\end{equation}
+With the sigmoid function
+\begin{equation}
+\label{eq:sigmoid_function}
+\sigma = \frac{1}{1 + e^{-z}}
+\end{equation}
+the logarithm of logistic regression hypothesis function is
+\begin{equation}
+\label{eq:log_logi_regr_hyp_func}
+log( h_{\bm\theta}(x^{(i)}) )= - log(1 + e^{-\bm\theta \, \bm x^{(i)}})
+\end{equation}
+and 
+\begin{equation}
+\label{eq:log_logi_regr_hyp_func_one}
+log( 1 - h_{\bm\theta}(x^{(i)}) ) = \bm\theta \, \bm x^{(i)} - log(1 + e^{-\bm\theta \, \bm x^{(i)}})
+\end{equation}
+With the equations \eqref{eq:log_logi_regr_hyp_func} and \eqref{eq:log_logi_regr_hyp_func_one} and the expression
+\begin{equation}
+\label{eq:expr_simplify}
+\bm \theta \bm x + log( 1 + e^{- \bm \theta \bm x}) = log( e^{ \bm \theta \bm x} ) + log( 1 + e^{- \bm \theta \bm x}) = log( e^{ \bm \theta \bm x} + 1 )
+\end{equation}
+the cost function \eqref{eq:logi_res_cost_function} simplifies to
+\begin{equation}
+\label{eq:simp_cost_func}
+J(\bm\theta) = - \frac{1}{m} \sum_{i=1}^{m} ( y^{(i)} \bm\theta \bm x^{(i)} - log( e^{ \bm\theta \bm x^{(i)} } + 1) )
+\end{equation}
+The gradient of this function is
+\begin{equation}
+\label{eq:grad_cost_func}
+\frac{\partial J(\bm\theta)}{\partial \theta_{j}} = -  \frac{1}{m}\sum_{i=1}^{m} ( y^{(i)} x_{j}^{(i)} - \frac{e^{ \bm\theta \bm x^{(i)} }  x_{j}^{(i)}}{e^{ \bm\theta \bm x^{(i)} } + 1})
+\end{equation}
+With future evaluation we can find 
+\begin{equation}
+\label{eq:grad_cost_func_sol}
+\frac{\partial J(\bm\theta)}{\partial \theta_{j}} =  \frac{1}{m}\sum_{i=1}^{m} ( - y^{(i)}  + \frac{1}{e^{- \bm\theta \bm x^{(i)} } + 1}) * x_{j}^{(i)}
+\end{equation}
+Which is the partial derivative of the cost function with respect to $\theta_{j}$ equals
+\begin{equation}
+\label{eq:grad_cost_func_sol}
+\frac{\partial J(\bm\theta)}{\partial \theta_{j}} =  \frac{1}{m}\sum_{i=1}^{m} ( h_{\bm\theta}(\bm x^{(i)}) - y^{(i)}) * x_{j}^{(i)}
+\end{equation}
+
+
